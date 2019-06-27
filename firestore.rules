@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /colors/{color} {
+      allow read: if true;
+      allow create: if request.auth.uid != null;
+      // only update if the user that created the document is the user updating it
+      // and the only field being updated is label
+      allow update: if request.auth.uid == uid
+                    && request.resource.data.r == resource.data.r
+                    && request.resource.data.g == resource.data.g
+                    && request.resource.data.b == resource.data.b
+                    && request.resource.data.uid == resource.data.uid;
+      // only allow delete if the user that created the document is the user deleting it
+      allow delete: if request.auth.uid == uid;
+    }
+  }
+}
