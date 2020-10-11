@@ -14,7 +14,7 @@
     "lodash": ">=4.17.20"
   },
   "dependencies": {
-    "browserify": "^16.5.1",
+    "browserify": "^17.0.0",
     "firebase": "^7.23.0"
   }
 }
