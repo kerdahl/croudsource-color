@@ -10,7 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "eslint": "^7.3.1",
-    "eslint-config-p5js": "^1.0.1",
+    "eslint-config-p5js": "^1.1.0",
     "lodash": ">=4.17.20"
   },
   "dependencies": {
